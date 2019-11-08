@@ -4,6 +4,8 @@ import jakubfilipiak.interntasks.learnhibernate.models.A;
 import jakubfilipiak.interntasks.learnhibernate.repositories.ARepository;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class AService {
 
@@ -15,5 +17,9 @@ public class AService {
 
     public A addA(A a) {
         return aRepository.save(a);
+    }
+
+    public Optional<A> getAById(Long id) {
+        return aRepository.findById(id);
     }
 }
