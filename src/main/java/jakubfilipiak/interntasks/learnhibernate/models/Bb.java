@@ -1,7 +1,12 @@
 package jakubfilipiak.interntasks.learnhibernate.models;
 
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
 import javax.persistence.*;
 
+@EqualsAndHashCode
+@ToString
 @Entity
 public class Bb {
 
@@ -9,6 +14,8 @@ public class Bb {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(mappedBy = "bb")
+    @EqualsAndHashCode.Exclude
+    @ToString.Exclude
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "bb")
     private Aa aa;
 }
