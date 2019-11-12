@@ -1,8 +1,6 @@
 package jakubfilipiak.interntasks.learnhibernate.services;
 
-import jakubfilipiak.interntasks.learnhibernate.models.Aa;
 import jakubfilipiak.interntasks.learnhibernate.models.Aaa;
-import jakubfilipiak.interntasks.learnhibernate.models.Bb;
 import jakubfilipiak.interntasks.learnhibernate.models.Bbb;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
