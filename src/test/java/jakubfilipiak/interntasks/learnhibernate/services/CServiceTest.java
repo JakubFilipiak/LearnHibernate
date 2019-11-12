@@ -34,6 +34,7 @@ public class CServiceTest extends AbstractTestNGSpringContextTests {
         C cFromDb = cService.getCById(cSaved.getId()).get();
 
         // then
+        assertNotNull(cFromDb);
         assertEquals(cFromDb, cSaved);
     }
 }
