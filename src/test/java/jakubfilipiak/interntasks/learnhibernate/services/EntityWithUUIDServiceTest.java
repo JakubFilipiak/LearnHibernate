@@ -30,4 +30,22 @@ public class EntityWithUUIDServiceTest extends AbstractTestNGSpringContextTests 
         assertNotNull(entityWithUUIDFromDb);
         assertEquals(entityWithUUIDFromDb, entityWithUUIDToBeSaved);
     }
+
+    @Test
+    public void shouldCorrectSaveEntityWithUUIDWhenGivenTmpName() {
+        // given
+        String tmpName = "tmp name";
+        EntityWithUUID entityWithUUIDToBeSaved = new EntityWithUUID(new Random().nextLong());
+        entityWithUUIDToBeSaved.setTmpName(tmpName);
+
+        // when
+        EntityWithUUID entityWithUUIDSaved = entityWithUUIDService.addEntityWithUUID(entityWithUUIDToBeSaved);
+        EntityWithUUID entityWithUUIDFromDb =
+                entityWithUUIDService.getEntityWithUUIDByUUID(entityWithUUIDSaved.getId()).get();
+
+        // then
+        assertNotNull(entityWithUUIDFromDb);
+        assertEquals(entityWithUUIDFromDb.getId(), entityWithUUIDToBeSaved.getId());
+        assertNull(entityWithUUIDFromDb.getTmpName());
+    }
 }
