@@ -8,6 +8,8 @@ import org.springframework.context.annotation.PropertySource;
 @SpringBootApplication
 public class LearnhibernateApplication {
 
+	// TODO: task 2.1 and 2.3 (@ManyToMany and @JoinTable(joinColumns = {@JoinColumn(...), ...}
+
 	public static void main(String[] args) {
 		SpringApplication.run(LearnhibernateApplication.class, args);
 	}
