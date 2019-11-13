@@ -1,6 +1,6 @@
 package jakubfilipiak.interntasks.learnhibernate.services;
 
-import jakubfilipiak.interntasks.learnhibernate.models.EntityId;
+import jakubfilipiak.interntasks.learnhibernate.models.CompositeKey;
 import jakubfilipiak.interntasks.learnhibernate.models.EntityWithCompositeKey;
 import jakubfilipiak.interntasks.learnhibernate.repositories.EntityWithCompositeKeyRepository;
 import org.springframework.stereotype.Service;
@@ -20,7 +20,7 @@ public class EntityWithCompositeKeyService {
         return entityWithCompositeKeyRepository.save(entityWithCompositeKey);
     }
 
-    public Optional<EntityWithCompositeKey> getEntityWithCompositeKeyByCompositeKey(EntityId entityId) {
-        return entityWithCompositeKeyRepository.findById(entityId);
+    public Optional<EntityWithCompositeKey> getEntityWithCompositeKeyByCompositeKey(CompositeKey compositeKey) {
+        return entityWithCompositeKeyRepository.findById(compositeKey);
     }
 }

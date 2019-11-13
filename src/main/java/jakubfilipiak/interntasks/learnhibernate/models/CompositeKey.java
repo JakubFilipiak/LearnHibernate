@@ -11,12 +11,12 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode
 @ToString
-public class EntityId implements Serializable {
+public class CompositeKey implements Serializable {
 
     private String key1;
     private String key2;
 
-    public EntityId(String key1, String key2) {
+    public CompositeKey(String key1, String key2) {
         this.key1 = key1;
         this.key2 = key2;
     }

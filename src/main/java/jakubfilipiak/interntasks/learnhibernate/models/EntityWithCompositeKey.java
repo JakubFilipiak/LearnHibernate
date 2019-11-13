@@ -14,7 +14,7 @@ import javax.persistence.IdClass;
 @EqualsAndHashCode
 @ToString
 @Entity
-@IdClass(EntityId.class)
+@IdClass(CompositeKey.class)
 public class EntityWithCompositeKey {
 
     @Id
@@ -24,13 +24,13 @@ public class EntityWithCompositeKey {
 
     private Long number;
 
-    public EntityWithCompositeKey(EntityId compositeKey, Long number) {
+    public EntityWithCompositeKey(CompositeKey compositeKey, Long number) {
         this.key1 = compositeKey.getKey1();
         this.key2 = compositeKey.getKey2();
         this.number = number;
     }
 
-    public EntityId getCompositeKey() {
-        return new EntityId(this.key1, this.key2);
+    public CompositeKey getCompositeKey() {
+        return new CompositeKey(this.key1, this.key2);
     }
 }

@@ -1,6 +1,6 @@
 package jakubfilipiak.interntasks.learnhibernate.services;
 
-import jakubfilipiak.interntasks.learnhibernate.models.EntityId;
+import jakubfilipiak.interntasks.learnhibernate.models.CompositeKey;
 import jakubfilipiak.interntasks.learnhibernate.models.EntityWithCompositeKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,7 +20,7 @@ public class EntityWithCompositeKeyServiceTest extends AbstractTestNGSpringConte
     @Test
     public void shouldCorrectSaveEntityWithCompositeKey() {
         // given
-        EntityId compositeKey = new EntityId("value1", "value2");
+        CompositeKey compositeKey = new CompositeKey("value1", "value2");
         EntityWithCompositeKey entityWithCompositeKeyToBeSaved =
                 new EntityWithCompositeKey(compositeKey, new Random().nextLong());
 
